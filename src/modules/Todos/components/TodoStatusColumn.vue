@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ITodo, TodoStatus } from '@/types/todo.type';
+import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
 import draggable from "vuedraggable";
 import { useTodos } from '../stores';
@@ -7,8 +8,11 @@ import TodoListItem from './TodoListItem.vue';
 
 const { status } = defineProps<{ status: TodoStatus }>();
 
-const { todoList, changeStatus } = useTodos()
-const list = computed(() => (todoList.filter(c => c.status === status)))
+const todoStore = useTodos();
+const { todoList } = storeToRefs(todoStore)
+const { changeStatus } = todoStore;
+
+const list = computed(() => (todoList.value.filter(c => c.status === status)))
 
 const change = (evt: { added: any } | { removed: any }, status: TodoStatus) => {
   if ('added' in evt) {

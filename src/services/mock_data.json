@@ -1,0 +1,23 @@
+[
+  {
+    "id": "abcde123",
+    "name": "First todo",
+    "status": "To Do",
+    "createdAt": "3/1/2023",
+    "isDeleted": false
+  },
+  {
+    "id": "abcde1234",
+    "name": "Second todo",
+    "status": "In progress",
+    "createdAt": "3/3/2023",
+    "isDeleted": false
+  },
+  {
+    "id": "abcde12345",
+    "name": "Third todo",
+    "status": "Done",
+    "createdAt": "3/12/2023",
+    "isDeleted": false
+  }
+]

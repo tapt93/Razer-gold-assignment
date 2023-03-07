@@ -42,6 +42,9 @@ export const useTodos = defineStore('todo', {
     getById(id?: string): ITodo | undefined {
       if (!id) return undefined;
       return this.todoList.find(c => c.id === id);
+    },
+    set(todos: ITodo[]) {
+      this.todoList = [...todos];
     }
   }
 })

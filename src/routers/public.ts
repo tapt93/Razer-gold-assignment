@@ -1,9 +1,9 @@
-const TodosPage = () => import('@/modules/Todos/Todos.vue')
+const TodoPage = () => import('@/pages/todo/TodoPage.vue')
 
 export const publicRoutes = [
   {
     path: '/',
     name: "Todo",
-    component: TodosPage
+    component: TodoPage
   }
 ]
